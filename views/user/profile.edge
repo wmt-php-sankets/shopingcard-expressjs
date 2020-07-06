@@ -1,0 +1,29 @@
+@include('layout')
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>User Profile</h1>
+        <hr>
+        <h2>My Orders</h2>
+      
+
+        @each(orders in orders)
+        <div class="panel panel-default">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        @each(items in items)
+                         <li class="list-group-item">
+                                <span class="badge">{{ orders.cart.totalPrice }}</span>
+                                {{ items.item.title }} | {{ items.qty }} Units
+                            </li>
+                            @endeach
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <strong>Total Price: ${{ orders.cart.totalPrice }}</strong>
+
+                    <strong>Total Qty is: {{ orders.cart.totalQty }}</strong>
+                </div>
+            </div>
+            @endeach
+                </div>
+</div>

@@ -1,0 +1,27 @@
+@include('layout')
+
+<div class="row">
+    <div class="col-md-4 offset-4">
+          
+            <h1>Sign in</h1>
+            
+            <div class="bg-info" style="color:red;font-size:30px;">
+                {{error}}
+              </div>
+              
+            
+            <form action="/user/signin" method="post">
+                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary">signin</button>
+            </form>
+    </div>
+</div>  

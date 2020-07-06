@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    @include('layout')     
+        <div class="container-fluid">
+    
+  
+    
+
+            <div class="row"> 
+        @each(products in products)
+      
+        <div class="col-sm-6 col-md-4">                
+                <div class="img-thumbnail">
+                    <img src="{{products.imagePath}}" class="" alt="">
+                 
+                    <h3 class="mt-3"> {{products.title}} </h3>
+                    <p class="description" >{{products.description}}</p>
+                
+                        <div class="clearfix">
+                            <div class="price">$12</div> 
+                        {{--  <a href="add-to-cart/{{products.id}}" class="btn btn-success pull-right">Add to shoping card </a>  --}}
+                        <a href="/add-to-cart/{{products.id}}" class="btn btn-sm  btn-success pull-right" role="button">Add To Shopping Cart</a>
+
+                    </div>
+                </div>
+        </div>
+        @endeach   
+    
+ </div>
+</div>
+</body> 
+</html>
